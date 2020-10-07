@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Capgemini JS</title>
+	</head>
+
+	<body>
+		<script> 		
+			//Primeira Maneira
+			//Somente o "Itelios, part of Capgemini" aparece na tela, caso seja um número múltiplo de 3 e 5. Não aparece o "Itelios" e nem o "CAPGEMINI".
+			for (let i = 1; i <= 100; i++) {
+				let isNotPrime = false;
+				if(i % 3 === 0 && i % 5 === 0){
+					console.log(i + " " + "Itelios, part of Capgemini");
+				}else{
+					(i % 3 === 0) && console.log(i + " " + "Itelios");
+					(i % 5 === 0) && console.log(i + " " + "CAPGEMINI");
+				}
+				for (let prime = 2; prime <= i; prime++) {
+					if (i % prime === 0 && prime !== i)
+						isNotPrime = true;
+				}
+				(!isNotPrime && i !== 1) && console.log(i + " " + "Número primo");
+				
+			}
+			
+
+			//SEGUNDA MANEIRA
+			//Essa segunda opção seria para aparecer na tela "Itelios", "CAPGEMINI", "Itelios part of Capgemini".
+			//Ex: No número 15 é múltiplo de 3 e 5, então aparece o número(15), 3 vezes no console.
+			for (let i = 1; i <= 100; i++) {
+				let isNotPrime = false;
+				(i % 3 === 0) && console.log(i + " " + "Itelios");
+				(i % 5 === 0) && console.log(i + " " + "CAPGEMINI");
+				(i % 3 === 0 && i % 5 === 0) && console.log(i + " " + "Itelios part of Capgemini");
+				for (let prime = 2; prime <= i; prime++) {
+					if (i % prime === 0 && prime !== i)
+						isNotPrime = true;
+				}
+				(!isNotPrime && i !== 1) && console.log(i + " " + "Número primo");
+			}
+		</script>
+	</body>
+</html>
